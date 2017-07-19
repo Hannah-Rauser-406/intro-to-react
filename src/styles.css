@@ -1,0 +1,29 @@
+.app-container{
+  margin: 10px;
+}
+.nav-item-container{
+  display: flex;
+  justify-content:space-around;
+  border: solid 2px teal;
+  border-radius: 15px;
+  margin: 7px;
+}
+.nav-item-container > li{
+  font-size: 20px;
+  list-style: none;
+}
+.nav{
+  padding: 10px;
+  background-color: ;
+}
+.jumboTron{
+  padding: 25px;
+  background-color: grey;
+}
+.section{
+  border: solid 10px teal;
+}
+.cat-img{
+  width: 95%;
+  align-self: center;
+}
