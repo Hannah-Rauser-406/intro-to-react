@@ -7,10 +7,12 @@
   border: solid 2px teal;
   border-radius: 15px;
   margin: 7px;
+  margin-left: 0;
 }
 .nav-item-container > li{
   font-size: 20px;
   list-style: none;
+  margin: 0;
 }
 .nav{
   padding: 10px;
