@@ -5,9 +5,9 @@ const NavBar = (props) => {
     <nav className='nav'>
       <ul className='nav-item-container'>
         {
-          props.navLinks.map(function(item){
-            //return something
-            return <li>{item}</li>
+          props.navLinks.map(function(item, index){
+          {/*I am a comment*/}
+            return <li key={index} >{item}</li>
           })
         }
       </ul>
@@ -26,7 +26,7 @@ const Section = (props) => {
   return(
     <div className="section header-with-img">
       <div className="img">
-        <img className="cat-img" src={props.img} />
+        <img className="cat-img" alt='presentation' src={props.img} />
         <p> {props.sectionHeader}</p>
       </div>
     </div>
