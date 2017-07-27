@@ -49,3 +49,23 @@
 .chat-container > div {
   width: 33.333%;
 }
+.inc-count-btn{
+  background-color: #d35400;
+  border-radius: 20px;
+  font-size: 15px;
+}
+.dec-count-btn{
+  background-color: #e67e22;
+  border-radius: 20px;
+  font-size: 15px;
+}
+.open-btn{
+  background-color: red;
+  border-radius: 20px;
+  font-size: 24px;
+}
+.close-btn{
+  background-color: green;
+  border-radius: 20px;
+  font-size: 24px;
+}

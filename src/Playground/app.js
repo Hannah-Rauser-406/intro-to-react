@@ -1,4 +1,5 @@
 import React from 'react';
+import faker from 'faker';
 //import data file to use
 const UsersList = (props) => {
   return(
@@ -15,15 +16,35 @@ const UsersList = (props) => {
   )
 }
 
+const Counter = (props) => {
+  return(
+    <div>
+      <h4> counter: {props.counter}</h4>
+        <button className="inc-count-btn" onClick={
+          () => props.increaseCounter()}> Increase Counter </button>
+        <button className="dec-count-btn" onClick={
+          () =>  props.decreaseCounter()}> Decrease Counter </button>
+    </div>
+
+  )
+}
+
 class App extends React.Component {
 
  state = {
    name: "Hannah",
    counter: 0,
    users: null,
+   showCounter: true,
  }
+ increaseCounter = this.increaseCounter.bind(this)
+ decreaseCounter = this.decreaseCounter.bind(this)
+
  componentDidMount(){
-   this.fetchUsersFromServer()
+   this.fetchUsersFromServer();
+   const randomName = faker.name.firstName();
+   const someProd = faker.commerce.product();
+   alert(someProd);
    //this.setState({ customers: myData})
  }
  fetchUsersFromServer(){
@@ -43,18 +64,26 @@ class App extends React.Component {
  decreaseCounter(){
    this.setState({counter: this.state.counter -= 1})
  }
-
+toggleCounter(){
+  this.setState({showCounter: !this.state.showCounter})
+}
 
   render(){
     return(
       <div>
-        <h1>My name is: {this.state.name}</h1>
-        <h4> counter: {this.state.counter}</h4>
-        <button onClick={
-          () => this.increaseCounter()}> Increase Counter </button>
-        <button onClick={
-          () =>  this.decreaseCounter()}> Decrease Counter </button>
-
+      <button
+      className={this.state.showCounter ? "open-btn" : "close-btn"}
+      onClick={()=> this.toggleCounter() }> {this.state.showCounter ? "hide" : "show"}
+      </button>
+          {
+            this.state.showCounter
+            ? <Counter
+            counter={this.state.counter}
+            increaseCounter={this.increaseCounter}
+            decreaseCounter={this.decreaseCounter}
+            />
+            : null
+          }
           {
             this.state.users
             ? <UsersList usersData={this.state.users} />
