@@ -11,7 +11,7 @@ const App = () => {
   return(
     <div className="app-container">
       <NavBar navLinks={["Home", "About", "Contact", "Blog"]}/>
-        <div className="jumboTron">
+        <div className="jumboTron jumbotron">
           <JumboTron
           header={"Web App"}
           callToAction={"built with React"}
